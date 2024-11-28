@@ -1,0 +1,274 @@
+@import url(https://fonts.google.com/specimen/Poppins);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* making menu items  in horizontal way */
+.portfolio-container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+.navlist{
+    display: flex;    /* becomes in row shape but without space */
+    gap: 3.5rem;
+    /*give background command to fix the area to which we have to allign in center */
+    /* background: red; */
+    height: 15vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.navlist {             /* to remove black dots */
+    list-style: none;
+}
+.navlist li a{     /* to remove underline */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #fff;
+    position: relative;
+    /* position is added to underline navlist, discussed below */
+}
+/* giving colour to backgroubd*/
+/* by writing only this 
+.left-container{
+    background: #262525;
+}
+.right-container{
+    background: #3877FF;
+} nothing change will happen , so add this also*/
+.left-container, .right-container{
+    height: 100vh;   /* if both containers have same value for height
+    then dont add it seprately, add once in both*/
+    display: flex; /* it arrange icons and data entered in x ray(horizontal way)*/
+    align-items: center; /* it brings both data & icons in center*/
+}
+.left-container{
+    background: #262525;
+    width: 70%;
+    padding-left: 3rem;  /*icons and data entered, are fully attached
+    to left boundry, giving them space*/
+}
+.right-container{
+    background: linear-gradient(-90deg, #3877FF 0%, #262525 100%);
+    width : 30%
+}
+
+ /* but with it, it is coming in left side vertically*/
+/* so go up in portfolio-container add property -> display*/
+/* now it is in horzontal way but the order is navlist then left colour
+then black colour
+we have to combine first colou with second but navlist on thier top,
+not on one side*/
+/* so in navlist class add position*/
+/* now the colour of navlist has become dull
+so go on navlist li anchor add color*/
+.icons .fa-brands{
+    color:#bbb;
+    font-size: 1.7rem; /* enlarging font size of icons*/
+}
+.icons{
+    display: flex;
+    flex-direction: column; /* now the icons have become in 
+    column shape(vertical), but without space*/
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;  /* to give gap between icons*/
+}
+.content{
+    margin-left: 4rem;
+}
+.content .intro{
+    font-size: 1.5rem;
+    color: #fff;
+}
+.content .intro span{
+    color: #5db9ee;
+}
+.content h1{
+    font-size: 4rem;
+    color: #5db9ee;
+}
+.content .detail{
+    font-size: 1.1rem;
+    color: #fff;
+    max-width: 38rem; /* it will give data a paragraph shape*/
+    margin: 1.1rem 0 3rem 0; /* these are representing -> 1.1=top,
+     0 = right side,3rem= bottom, and 0= left side*/
+    line-height: 1.8rem; /* distance b/w the lines of paragraph*/
+}
+.button-container button{
+    border: .1rem solid #5db9ee;
+    font-size: 1.1rem;
+    padding: .8rem 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .5s ease;
+}  /* similar changes are made here*/
+
+button:nth-child(1){
+    background: #5db9ee;
+    color: #262525;
+}
+button:nth-child(2){
+    background: transparent;
+    color: #5db9ee;
+    margin-left: 2rem; /* giving space b/w both buttons*/
+}
+/* to make buttons vice versa means when pointer go on one button
+its color will become like the next one, its mean color will change
+due to cursor otherwise it will not*/
+/* for this, add cursor in .button-container button*/
+button:nth-child(1):hover{
+    background: transparent;
+    color: #5db9ee;
+} /* with this,by moving cursor on this button, we are getting
+this button in the form of 2nd one*/
+button:nth-child(2):hover{
+    background: #5db9ee;
+    color: #262525;
+}
+/* to make icons gradient*/
+.icons .fa-brands:hover{
+    cursor: pointer;
+    background: linear-gradient(#fff,#3877FF);
+    /* with this icon will represent in box with 2 shades*/
+    -webkit-background-clip: text;
+    /* it will change background paint, but nothing will be
+    shown in icon, just will remain same like before*/
+    -webkit-text-fill-color: transparent;
+    /* now box is removed but icon is in 2 shades*/
+    /* we want gradient just when we move cursor on icon*/
+    /* for that add hover in line -> .icons .fa-brands
+    on the top of this column*/
+}
+/* now design image*/
+.design .circle{
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 70%;  /* b coz we dont want it in fully center*/
+    transform: translate(-50%, -50%);  /* x axis, y axis*/
+    /* it will bring circle in center, so left jo pehlay 50% pr set kiya
+    hua tha us ko 70% pr kr dain gay*/
+}
+.circle:nth-child(1){
+    background: linear-gradient(90deg, transparent 50%, #262525 50%);
+    width: 38rem;
+}
+.circle:nth-child(2){
+    width: 30rem;
+    background-image: url("image/dani.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: .8rem solid white;
+    box-shadow:  /* here adding ring light in a circle*/
+    0 0 1rem #fff, /* 0 and 0 are x axis and y axis 1rem is spread of shadow and color white
+    but it is for outer boundry of circle*/
+    inset 0 0 1rem #fff,  /*this is for inner boundry*/
+    0 0 2rem #3877FF, /* it will give blue glow in outer side */
+    inset 0 0 2rem #3877ff, /* it will give blue glow in inner side */
+    0 0 4rem #3877FF, /* it will give more glow on outside with more shadow */
+    inset 0 0 4rem #3877FF
+}  /* nothing is visible in website with this, add
+aspect- ratio in .design .circle section & width in both childs */
+/* aspect-ratio means if width size raises or decreases height will also 
+be raise or fall*/
+/* red color has come after blue colr,to bring it in its position, add position 
+in circle class*/
+/* to make it in circle shape add border-radius in circle class*/
+/* still it is not in its right position
+/*pehlay both child ko hum nay 
+.circle:nth-child(1){
+    background: red;
+    width: 38rem;
+}
+.circle:nth-child(2){
+    background: white;
+    width: 30rem;
+    is tarah set kiya tha, to make the circles prominent*/
+/* now we want to give red coloured circle 2 colors, as you can see in website*/
+/* add linear-gradient in 1st child, it'll come in this way
+.circle:nth-child(1){
+    background: linear-gradient(red, #262525);
+    width: 38rem;
+    it'll show circle red & grey in gradient way*/
+/* if we add 50% with both colors,
+.circle:nth-child(1){
+    background: linear-gradient(red 50%, #262525 50%);
+    width: 38rem;
+ it'll be distributed to each, like red in
+upper half and grey in lower half*/
+/* to bring edge point up to match grey color with grey
+like grey bg on one side and half grey circle on right side of bg on blue portion
+.circle:nth-child(1){
+    background: linear-gradient(90deg, red 50%, #262525 50%);
+    width: 38rem;
+just added 90 deg*/
+/* now havnt need of red color, as was only added to make circle so we could easily
+see it. so make red portion transparent*/
+/* .circle:nth-child(2){
+    background: white;
+    width: 30rem;
+}  in white circle, we r going to put image*/
+/* as we added image,
+.circle:nth-child(2){
+    width: 30rem;
+    background-image: url("image/dani.png");
+}  it is not properly visible, basically it is zoomed out*/
+/* add property bg-size, is say image sahi ho jaye ga, pr repeat hota hai,repeat ko
+khatam krnay k liye, add property repeat*/
+/* to make the upper portion of cicle of image gradient, add linear-gradient in bg of
+right-container
+.right-container{
+    background: #3877FF;
+    width : 30%
+} with this
+ .right-container{
+    background: linear-gradient(#3877FF , #262525);
+    width : 30%
+} it will make gradient in bottom of circle, to bring it on top add deg
+.right-container{
+    background: linear-gradient(45deg, #3877FF , #262525);
+    width : 30%
+}  is say grey nay blue ka kafi portion lay liya hai, blue ko increase krnay k liye
+  add % in blue*/
+/* now adding ring light in a circle*/
+.navlist li a::after, .navlist .active::after{      /* after is used to underline */ 
+    /*  .navlist li a::after{ mentioned below,
+    pehlay is pr kaam krna hai, baad main baqi add krna hai*/
+
+    content: "";
+    position: absolute;
+    background: #fff;
+    /* width: 100%; by keeping width 100% line remained on the screen*/
+    /* width: 0;  line will remove */
+    /* now again i will keep width 100 and will add transform */
+    width: 100%;
+    height: .1rem;
+    /* with writing these lines a long line on top & right side of navlist is visible  */
+    left: 0;
+    /* now it is from left to right a long line but still on top of navlist */
+    /* to cut this line and bring it on navlist go to navlist li anchor & add position */
+    /* now it is cut but are on top of navlist, to bring it down write */
+    bottom: -5px;
+    /* now change the width 100 to 0 */
+    transform: scaleX(0); /* line will be invisible */
+    transform-origin: bottom right; /* line will end in right */
+    transition: transform .5s; /* time of staying line, for beauty */
+}
+.navlist li a:hover::after, .navlist .active::after{
+    transform: scaleX(1);   /* line will be visible when pointer will go on navlist */
+    transform-origin: bottom left; /* line will start from left */
+}
+/* to keep the underline permanent on HOME navlist
+go to html add active on (HOME)navlist
+now add .navlist.active::after by seprating it wth comma in
+.navlist li a::after{    line
+*/
+/* hover walay pr b */

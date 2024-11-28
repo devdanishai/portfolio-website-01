@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bring this link from for social media icons
+     go to google ->font awesome cdn -> copy one link from given files and paste here, it is just necessary to bring fonts from outside-->
+     <!--now go to google -> font awesome ->click on icon -> write e.g facebook and get icon of ur choice-->
+</head>
+<body>
+    <div class="portfolio-container">
+        <ul class="navlist">  <!-- making menu items -->
+
+            <li><a href="#" class="active">Home</a></li>
+            <!-- class is added later for underline-->
+            <li><a href="#">Work</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Service</a></li>
+        </ul>
+        <div class="left-container">
+            <div class="icons">
+                <!--here we have pasted the link of social media icon--> 
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-brands fa-kaggle"></i>
+            </div>
+            <div class="content">
+                <p class="intro">Hi! I am <span>Danish Ammar</span></p> <!--span is used to change the color of this text-->
+                <!-- thats why this text is given in p not in heading clause-->
+                <h1>AI/ML Engineer</h1>
+                <p class="detail">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et quo beatae eos vel, nesciunt sapiente eaque magnam architecto inventore autem.</p>
+                <div class="button-container">
+                    <button>Hire Me</button>
+                    <button>View Project</button>
+                </div>
+            </div>        
+        </div>
+        <div class="right-container"></div>  <!--nothing is going to happen in right section here-->
+        <!-- we are going to make design for image-->
+        <div class="design">   <!-- just write .design, it'll automatically create div-->
+            <div class="circle"></div> <!-- just write div*2, 2 of divs will be created automatically-->
+            <div class="circle"></div>
+        </div>
+</div>
+</body>
+</html>
